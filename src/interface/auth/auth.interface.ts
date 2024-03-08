@@ -9,6 +9,6 @@ export interface InputLogin {
   email: string;
   password: string;
 }
-export interface AuthInterface {
+export interface IAuthService {
   login: (input: InputLogin) => OutputLogin;
 }

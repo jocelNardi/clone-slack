@@ -13,7 +13,7 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    return this.userRepository.create(createUserDto);
+    return this.userRepository.save(createUserDto);
   }
 
   findAll() {
@@ -22,6 +22,10 @@ export class UsersService {
 
   findOne(id: number) {
     return this.userRepository.findOne({ where: { id } });
+  }
+
+  findByMail(email: string) {
+    return this.userRepository.findOne({ where: { email } });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
